@@ -17,11 +17,6 @@ const Footer = ({
 
   return (
     <footer className={`footer ${className}`}>
-      <div className={`footer-container ${containerClassName}`}>
-        <span className={`copyright ${textClassName}`}>
-          {t(translationKeys.FOOTER_TITLE)}
-        </span>
-      </div>
     </footer>
   );
 };
