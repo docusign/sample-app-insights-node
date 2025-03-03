@@ -1,5 +1,5 @@
 
-# DocuSign Navigator API Sample App
+# Insights Sample App
 
 This project is a **Sample Application** showcasing the use of **DocuSign Navigator API**. The application demonstrates how to authenticate using OAuth Code Grant flow, fetch user agreements, and verify users using the DocuSign API.
 
