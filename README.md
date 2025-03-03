@@ -1,7 +1,7 @@
 
-# Docusign Navigator API Sample App
+# Docusign Insights Sample App
 
-The Navigator Sample App showcases how the Navigator API (beta) can be used to get agreement details.
+The Insights Sample App showcases how the Navigator API (beta) can be used to get agreement details.
 
 ## Table of Contents
 - [Prerequisites](#prerequisites)

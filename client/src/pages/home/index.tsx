@@ -101,15 +101,6 @@ const Home: React.FC = () => {
       <section className="info-section text-center">
         <div className="container-fluid">
           <div className="info-container">
-            <div className="info-block">
-              <h2 className="info-title">
-                {t(translationKeys.HOME_DOCUSIGN_HEADER)}
-              </h2>
-              <p className="info-description">
-                {t(translationKeys.HOME_DOCUSIGN_DESCRIPTION)}
-              </p>
-            </div>
-
             <div className="links-group">
               <a
                 className="btn-homepage btn-connect btn-login authorize-btn connect-with-test-account documentation-button-1"
