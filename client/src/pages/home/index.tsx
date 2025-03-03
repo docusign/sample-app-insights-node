@@ -106,7 +106,7 @@ const Home: React.FC = () => {
                 className="btn-homepage btn-connect btn-login authorize-btn connect-with-test-account documentation-button-1"
                 href="https://go.docusign.com/o/sandbox/"
                 target="_blank"
-                aria-label="Visit DocuSign Sandbox"
+                aria-label="Visit Docusign Sandbox"
               >
                 {t(translationKeys.HOME_DOCUSIGN_CREATE_ACCOUNT)}
               </a>
@@ -114,7 +114,7 @@ const Home: React.FC = () => {
                 className="btn-homepage btn-connect btn-login authorize-btn connect-with-test-account documentation-button-2"
                 href="https://developers.docusign.com/"
                 target="_blank"
-                aria-label="Learn more about DocuSign"
+                aria-label="Learn more about Docusign"
               >
                 {t(translationKeys.HOME_DOCUSIGN_LEARN_MORE)}
               </a>

@@ -1,7 +1,7 @@
 
 # Insights Sample App
 
-This project is a **Sample Application** showcasing the use of **DocuSign Navigator API**. The application demonstrates how to authenticate using OAuth Code Grant flow, fetch user agreements, and verify users using the DocuSign API.
+This project is a **Sample Application** showcasing the use of **Docusign Navigator API**. The application demonstrates how to authenticate using OAuth Code Grant flow, fetch user agreements, and verify users using the Docusign API.
 
 ## Table of Contents
 - [Prerequisites](#prerequisites)
@@ -24,8 +24,8 @@ Before you begin, ensure you have the following installed:
 1. **Clone the repository**:
 
    ```bash
-   git clone https://github.com/your-username/sample-app-navigator-node.git
-   cd sample-app-navigator-node
+   git clone https://github.com/your-username/sample-app-insights-node.git
+   cd sample-app-insights-node
    ```
 
 2. **Install the dependencies**:
