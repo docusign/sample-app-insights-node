@@ -17,11 +17,11 @@
     "ACTIONS": "",
     "REFRESH_AGREEMENTS": "Refresh",
 
-    "LOGO_TITLE": "Navigator",
+    "LOGO_TITLE": "Insights",
     "HEADER_HOME_NAV_TITLE": "Navigator API home page",
     "HEADER_HOME_GITHUB_TITLE": "GitHub Source",
 
-    "HOME_HEADER_TITLE": "Welcome to the <span class='title-main-word'>Navigator API</span> Sample App",
+    "HOME_HEADER_TITLE": "Welcome to the <span class='title-main-word'>Insights</span> Sample App",
     "HOME_HEADER_DESCRIPTION": "Self-service Business Operations Portal",
     "HOME_HEADER_STEP_ONE": "If you are not a participant in the Navigator API closed beta, please select the option to log in with a test account",
     "HOME_HEADER_NOTE": "<strong>Note</strong><br> This sample<br> app is written<br>in <strong>Node.JS</strong>",

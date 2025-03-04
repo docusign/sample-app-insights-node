@@ -1,7 +1,7 @@
 
-# Docusign Navigator API Sample App
+# Docusign Insights Sample App
 
-The Navigator Sample App showcases how the Navigator API (beta) can be used to get agreement details.
+The Insights Sample App showcases how the Navigator API (beta) can be used to get agreement details.
 
 ## Table of Contents
 - [Prerequisites](#prerequisites)
@@ -19,8 +19,8 @@ Before you begin, ensure you have the following installed:
 
 ## Setup and Installation
 
-1. Download or clone this repository to your workstation in a new folder named **sample-app-navigator-node**.
-2. Navigate to that folder: **`cd sample-app-navigator-node`**
+1. Download or clone this repository to your workstation in a new folder named **sample-app-insights-node**.
+2. Navigate to that folder: **`cd sample-app-insights-node`**
 3. Navigate to the **client** folder: **`cd client`**
 4. Install dependencies using the [npm](https://www.npmjs.com/) package manager: **`npm install`**
 5. Navigate to the **server** folder: **`cd ../server`**
