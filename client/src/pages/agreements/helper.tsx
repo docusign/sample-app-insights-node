@@ -33,16 +33,16 @@ export const getColumns = (
 ) => [
   {
     title: t(translationKeys.NAME),
-    dataIndex: "file_name",
-    key: "file_name",
-    render: (_: any, record: AgreementDocument) => record.file_name,
+    dataIndex: "fileName",
+    key: "fileName",
+    render: (_: any, record: AgreementDocument) => record.fileName,
   },
   {
     title: t(translationKeys.PARTIES),
     dataIndex: "parties",
     key: "parties",
     render: (_: any, record: AgreementDocument) =>
-      record.parties?.map((party) => party.name_in_agreement).join(", ") ?? "-",
+      record.parties?.map((party) => party.nameInAgreement).join(", ") ?? "-",
   },
   {
     title: t(translationKeys.DOCUMENT_TYPE),
@@ -58,12 +58,12 @@ export const getColumns = (
   },
   {
     title: t(translationKeys.EXPIRATION_DATE),
-    dataIndex: "expiration_date",
-    key: "expiration_date",
+    dataIndex: "expirationDate",
+    key: "expirationDate",
     render: (_: any, record: AgreementDocument) =>
-      record.provisions?.expiration_date
+      record.provisions?.expirationDate
         ? format(
-            moment(record.provisions.expiration_date).toDate(),
+            moment(record.provisions.expirationDate).toDate(),
             "yyyy/MM/dd"
           )
         : "-",
@@ -83,17 +83,17 @@ export const getColumns = (
 
 export const getNestedValue = (obj: AgreementDocument, path: string) => {
   switch (path) {
-    case "file_name":
-      return obj.file_name;
+    case "fileName":
+      return obj.fileName;
     case "type":
       return obj.type;
     case "parties":
       return (
-        obj?.parties?.map((party) => party.name_in_agreement).join(", ") ?? "-"
+        obj?.parties?.map((party) => party.nameInAgreement).join(", ") ?? "-"
       );
-    case "expiration_date":
-      return obj.provisions?.expiration_date
-        ? moment(obj.provisions.expiration_date).toDate()
+    case "expirationDate":
+      return obj.provisions?.expirationDate
+        ? moment(obj.provisions.expirationDate).toDate()
         : new Date();
     default:
       return "";

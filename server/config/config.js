@@ -23,7 +23,7 @@ module.exports = {
   client : {
     port: process.env.CLIENT_URL
   },
-  scopes: ['adm_store_unified_repo_read'],
+  scopes: ['adm_store_unified_repo_read', 'signature'],
   responseType:'code',
   state: 'random_state_string'
 };
