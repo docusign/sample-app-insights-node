@@ -23,7 +23,7 @@
 
     "HOME_HEADER_TITLE": "Welcome to the <span class='title-main-word'>Insights</span> Sample App",
     "HOME_HEADER_DESCRIPTION": "Self-service Business Operations Portal",
-    "HOME_HEADER_STEP_ONE": "If you haven't obtained access to the Navigator API limited availability (LA) release, please select the option to log in with a test account, or <a href = 'https://developers.docusign.com/docs/navigator-api/limited-availability/'>request access</a> to the LA release.",
+    "HOME_HEADER_STEP_ONE": "If you haven't obtained access to the Navigator API limited availability (LA) release, please select the option to log in with a test account,",
     "HOME_HEADER_NOTE": "<strong>Note</strong><br> This sample<br> app is written<br>in <strong>Node.JS</strong><br> and uses both<br> <strong>ACG</strong> and <strong>JWT</strong><br> authentication",
     "HOME_HEADER_BTN_TITLE": "Log in with your Docusign account",
     "HOME_HEADER_CARD_TITLE": "Docusign: Build the future of agreements",

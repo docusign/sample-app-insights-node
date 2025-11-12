@@ -76,7 +76,7 @@ const Home: React.FC = () => {
                   </a>
                 </div>
                 <p className="step-description">
-                  {t(translationKeys.HOME_HEADER_STEP_ONE)}  or <a href='https://developers.docusign.com/docs/navigator-api/beta/' target='_blank' rel='noopener noreferrer'>join the closed beta</a>.
+                  {t(translationKeys.HOME_HEADER_STEP_ONE)} or <a href='https://developers.docusign.com/docs/navigator-api/limited-availability/'  target='_blank' rel='noopener noreferrer'>request access</a> to the LA release."
                 </p>
               </div>
             </div>
