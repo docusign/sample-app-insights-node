@@ -1,7 +1,5 @@
-const axios = require("axios");
-const urlJoin = require("url-join");
-const config = require("../config/config");
 const DsClient = require("../config/dsClient");
+const iam = require('@docusign/iam-sdk');
 
 const getAgreements = async (req) => {
   const accessToken = req.headers['authorization'].split(' ')[1];
@@ -15,15 +13,11 @@ const getAgreements = async (req) => {
       throw new Error("Access token is missing. Please log in again.");
     }
 
-    const url = urlJoin(config.docusign.agreementsUrl, accountId, 'agreements');
-    const response = await axios.get(url, {
-      headers: {
-        Authorization: `Bearer ${accessToken}`,
-      },
-    });
+    const client = new iam.IamClient({accessToken: accessToken });
+    const agreements = await client.navigator.agreements.getAgreementsList({ accountId: accountId });
 
-    if (response.data) {
-      return response.data.data;
+    if (agreements.data) {
+      return  agreements.data;
     } else {
       throw new Error("No agreements found");
     }
@@ -45,17 +39,11 @@ const getAgreementById = async (req, agreementId) => {
       throw new Error("Access token is missing. Please log in again.");
     }
 
-    const url = urlJoin(config.docusign.agreementsUrl, accountId, 'agreements', agreementId);
-    const response = await axios.get(url,
-      {
-        headers: {
-          Authorization: `Bearer ${accessToken}`,
-        },
-      }
-    );
+    const client = new iam.IamClient({ accessToken: accessToken });
+    const agreements = await client.navigator.agreements.getAgreement({ accountId: accountId, agreementId: agreementId });
 
-    if (response.data) {
-      return response.data;
+    if (agreements) {
+      return agreements;
     } else {
       throw new Error(`Agreement with ID ${agreementId} not found`);
     }

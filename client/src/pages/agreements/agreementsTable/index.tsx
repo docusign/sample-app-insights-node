@@ -96,7 +96,7 @@ useEffect(() => {
   let filtered = data;
   if (filters.searchText) {
     filtered = filtered.filter((item) =>
-      item.file_name.toLowerCase().includes(filters.searchText.toLowerCase())
+      item.fileName?.valueOf().toLowerCase().includes(filters.searchText.toLowerCase())
     );
   }
 
@@ -108,7 +108,7 @@ useEffect(() => {
 
   if (filters.expirationDate.date) {
     filtered = filtered.filter((item) => {
-      const itemExpirationDate = item.provisions?.expiration_date;
+      const itemExpirationDate = item.provisions?.expirationDate;
       return (
         itemExpirationDate &&
         moment(itemExpirationDate).isSame(
@@ -134,12 +134,17 @@ useEffect(() => {
     setSortConfig({ key, direction });
   };
   const sortedData = [...filteredData].sort((a, b) => {
-    const sortKey = sortConfig.key || "file_name";
+    const sortKey = sortConfig.key || "fileName";
     const aValue = getNestedValue(a, sortKey);
     const bValue = getNestedValue(b, sortKey);
-  
+    
+    if (aValue === undefined || bValue === undefined) {
+      return 0;
+    }
+
     if (aValue < bValue) return sortConfig.direction === "ASC" ? -1 : 1;
     if (aValue > bValue) return sortConfig.direction === "ASC" ? 1 : -1;
+    
     return 0;
   });
   const renderSortIcon = (key: string) => {

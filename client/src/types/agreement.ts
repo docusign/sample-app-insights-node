@@ -49,30 +49,30 @@ export interface Data {
 
 export interface AgreementDocument {
     id: string;
-    file_name: string;
-    type: string;
-    category: string;
-    status: string;
+    fileName?: string;
+    type?: string;
+    category?: string;
+    status?: string;
     parties?: {
       id: string;
-      name_in_agreement: string;
+      nameInAgreement: string;
     }[];
     provisions?: {
-      effective_date?: string;
-      expiration_date?: string;
-      execution_date?: string;
-      payment_terms_due_date?: string;
-      assignment_type?: string;
+      effectiveDate?: string;
+      expirationDate?: string;
+      executionDate?: string;
+      paymentTermsDueDate?: string;
+      assignmentType?: string;
     };
-    related_agreement_documents?: Record<string, unknown>;
-    source_name: string;
-    source_id: string;
-    metadata: {
-      created_at: string;
-      modified_at: string;
-      modified_by: string;
+    relatedAgreementDocuments?: Record<string, unknown>;
+    sourceName?: string;
+    sourceId?: string;
+    metadata?: {
+      createdAt: string;
+      modifiedAt: string;
+      modifiedBy: string;
     };
-    additional_custom_esign_data?: {
+    additionalCustomEsignData?: {
       [key: string]: {
         label: string;
         value: string;
