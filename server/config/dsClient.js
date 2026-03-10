@@ -1,28 +1,26 @@
-const docusign = require('docusign-esign-node-client');
+const iam = require('@docusign/iam-sdk');
 const fs = require('fs');
 const path = require('path');
 const config = require('../config/config');
 
 class DsClient {
   constructor() {
-    this.apiClient = new docusign.ApiClient();
-    this.apiClient.setBasePath(config.docusign.baseURL);
-    this.apiClient.setOAuthBasePath(config.docusign.oauthBasePath);
+    this.apiClient = new iam.IamClient()
   }
 
-  getUserInfo(token){
-    return this.apiClient.getUserInfo(token);
+  getUserInfo(){
+    return this.apiClient.auth.getUserInfo();
   }
 
   getAuthorizationUrl() {
     try {
-      const url = this.apiClient.getAuthorizationUri(
-        config.docusign.clientId,
-        config.scopes,
-        config.docusign.redirectUri,
-        config.responseType,
-        config.state
-      );
+      const url = iam.AuthUtils.createAuthorizationUrl({
+        clientId: config.docusign.clientId,
+        scopes: config.scopes,
+        redirectUri: config.docusign.redirectUri,
+        type: config.responseType,
+        state: config.state,
+      });
 
       return url;
     } catch (error) {
@@ -34,12 +32,10 @@ class DsClient {
 
   async exchangeCodeForToken(code) {
     try {
-      const tokenInfo = await this.apiClient.generateAccessToken(
-        config.docusign.clientId,
-        config.docusign.clientSecret,
-        code
-      );
-      return tokenInfo;
+      return await this.apiClient.auth.getTokenFromConfidentialAuthCode({
+        clientId: config.docusign.clientId,
+        secretKey: config.docusign.clientSecret
+      }, { code })
     } catch (error) {
       console.error('Error details:', error.response ? error.response.data : error.message);
       throw new Error(`Token exchange failed: ${error.message}`);
@@ -48,17 +44,17 @@ class DsClient {
 
   async updateToken() {
     try {
-      const rsaKey = fs.readFileSync(path.join(__dirname, '../config/private.key'));
-      const jwtResponse = await this.apiClient.requestJWTUserToken(
-        config.docusign.clientId,
-        config.docusign.userId,
-        config.scopes,
-        rsaKey,
-        3600
-      );
+      const rsaKey = fs.readFileSync(path.join(__dirname, '../config/private.key')).toString();
+      const assertion = iam.AuthUtils.createJwtAssertion({
+        clientId: config.docusign.clientId,
+        userId: config.docusign.userId,
+        scopes: config.scopes,
+        privateKey: rsaKey,
+      });
+      const jwtResponse = await this.apiClient.auth.getTokenFromJwtGrant({ assertion });
 
-      const accessToken = jwtResponse.body.access_token;
-      const expiresIn = jwtResponse.body.expires_in;
+      const accessToken = jwtResponse.accessToken;
+      const expiresIn = jwtResponse.expiresIn;
 
       return { accessToken, expiresIn };
     } catch (error) {
@@ -67,8 +63,14 @@ class DsClient {
     }
   }
 
-  getAuthorizedClient(accessToken) {
-    this.apiClient.addDefaultHeader('Authorization', `Bearer ${accessToken}`);
+  setAccessToken(accessToken) {
+    return new Promise((resolve, reject) => {
+      this.apiClient = new iam.IamClient({ accessToken });
+      resolve();
+    })
+  }
+
+  getAuthorizedClient() {
     return this.apiClient;
   }
 }

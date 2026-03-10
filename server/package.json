@@ -11,6 +11,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@docusign/iam-sdk": "^1.0.0-beta.7",
     "axios": "^1.7.7",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
@@ -22,6 +23,9 @@
     "path": "^0.12.7",
     "simple-oauth2": "^5.1.0",
     "url-join": "^4.0.1",
-    "docusign-esign-node-client": "file:./docusign-esign-node-client"
+    "zod": "^4.1.12"
+  },
+  "overrides": {
+    "zod": "^4.1.12"
   }
 }

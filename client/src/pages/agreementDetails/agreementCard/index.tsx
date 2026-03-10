@@ -19,24 +19,24 @@ const AgreementCard: React.FC<AgreementCardProps> = ({ agreement }) => {
 
   const agreementType = mapDocumentType(agreement.type);
   const parties = agreement.parties
-    ? agreement.parties.map((party) => party.name_in_agreement).join(", ")
+    ? agreement.parties.map((party) => party.nameInAgreement).join(", ")
     : "-";
-  const effectiveDate = agreement.provisions?.effective_date
-    ? format(moment(agreement.provisions.effective_date).toDate(), "yyyy/MM/dd")
+  const effectiveDate = agreement.provisions?.effectiveDate
+    ? format(moment(agreement.provisions.effectiveDate).toDate(), "yyyy/MM/dd")
     : "-";
-  const expirationDate = agreement.provisions?.expiration_date
+  const expirationDate = agreement.provisions?.expirationDate
     ? format(
-        moment(agreement.provisions.expiration_date).toDate(),
+        moment(agreement.provisions.expirationDate).toDate(),
         "yyyy/MM/dd"
       )
     : "-";
 
-  const renewalType = agreement?.provisions?.assignment_type ?? "-";
-  const renewalNoticePeriod = agreement?.provisions?.execution_date ?? "-";
-  const renewalNoticeDate = agreement?.provisions?.execution_date ?? "-";
-  const renewalTerm = agreement?.provisions?.execution_date ?? "1 year";
-  const renewalOwner = agreement?.parties?.[0]?.name_in_agreement ?? "-";
-  const additionalInfo = agreement?.additional_custom_esign_data?.[0]?.label ?? "-";
+  const renewalType = agreement?.provisions?.assignmentType ?? "-";
+  const renewalNoticePeriod = agreement?.provisions?.executionDate ?? "-";
+  const renewalNoticeDate = agreement?.provisions?.executionDate ?? "-";
+  const renewalTerm = agreement?.provisions?.executionDate ?? "1 year";
+  const renewalOwner = agreement?.parties?.[0]?.nameInAgreement ?? "-";
+  const additionalInfo = agreement?.additionalCustomEsignData?.[0]?.label ?? "-";
   const handleRefresh = () => {
     dispatch(fetchAgreementById(agreement.id) as any)
   }
