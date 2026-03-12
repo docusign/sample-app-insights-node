@@ -96,7 +96,7 @@ useEffect(() => {
   let filtered = data;
   if (filters.searchText) {
     filtered = filtered.filter((item) =>
-      item.file_name.toLowerCase().includes(filters.searchText.toLowerCase())
+      item.fileName.toLowerCase().includes(filters.searchText.toLowerCase())
     );
   }
 
@@ -108,7 +108,7 @@ useEffect(() => {
 
   if (filters.expirationDate.date) {
     filtered = filtered.filter((item) => {
-      const itemExpirationDate = item.provisions?.expiration_date;
+      const itemExpirationDate = item.provisions?.expirationDate;
       return (
         itemExpirationDate &&
         moment(itemExpirationDate).isSame(
