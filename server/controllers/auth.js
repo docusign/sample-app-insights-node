@@ -16,6 +16,8 @@ const callBackController = async (req, res) => {
   try {
     const authData = await DsClient.exchangeCodeForToken(code);
 
+    DsClient.setAccessToken(authData.accessToken);
+
     req.session.accessToken = authData.accessToken;
     req.session.refreshToken = authData.refreshToken;
     req.session.expiresIn = authData.expiresIn;
@@ -42,6 +44,8 @@ const callBackController = async (req, res) => {
 const jwtAuth = async (req, res) => {
   try {
     const authData = await DsClient.updateToken();
+
+    DsClient.setAccessToken(authData.accessToken);
 
     req.session.accessToken = authData.accessToken;
     req.session.expiresIn = authData.expiresIn;
