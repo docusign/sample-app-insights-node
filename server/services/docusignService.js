@@ -36,7 +36,7 @@ const getAgreementById = async (req, agreementId) => {
   DsClient.setAccessToken(accessToken);
 
   const userInfo = await DsClient.getUserInfo(accessToken);
-  const defaultAccount = userInfo.accounts.find(account => account.isDefault === 'true');
+  const defaultAccount = userInfo.accounts.find(account => account.isDefault === true);
   const accountId = defaultAccount ? defaultAccount.accountId : null;
 
   try {

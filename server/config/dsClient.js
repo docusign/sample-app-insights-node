@@ -8,6 +8,11 @@ class DsClient {
     this.apiClient = new iam.IamClient()
   }
 
+  client() {
+    this.apiClient = new iam.IamClient()
+    return this.apiClient;
+  }
+
   getUserInfo(){
     return this.apiClient.auth.getUserInfo();
   }
@@ -51,7 +56,7 @@ class DsClient {
         scopes: config.scopes,
         privateKey: rsaKey,
       });
-      const jwtResponse = await this.apiClient.auth.getTokenFromJwtGrant({ assertion });
+      const jwtResponse = await this.client().auth.getTokenFromJwtGrant({ assertion });
 
       const accessToken = jwtResponse.accessToken;
       const expiresIn = jwtResponse.expiresIn;
