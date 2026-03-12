@@ -53,7 +53,7 @@ class DsClient {
       const assertion = iam.AuthUtils.createJwtAssertion({
         clientId: config.docusign.clientId,
         userId: config.docusign.userId,
-        scopes: config.scopes,
+        scopes: [ ...config.scopes, 'impersonation' ],
         privateKey: rsaKey,
       });
       const jwtResponse = await this.client().auth.getTokenFromJwtGrant({ assertion });
