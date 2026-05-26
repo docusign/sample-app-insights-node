@@ -1,7 +1,7 @@
 
 # Insights Sample App
 
-This project is a **Sample Application** showcasing the use of **Docusign Navigator API**. The application demonstrates how to authenticate using OAuth Code Grant flow, fetch user agreements, and verify users using the Docusign API.
+This project is a **Sample Application** showcasing the use of **Docusign Agreement Manager API**. The application demonstrates how to authenticate using OAuth Code Grant flow, fetch user agreements, and verify users using the Docusign API.
 
 ## Table of Contents
 - [Prerequisites](#prerequisites)
@@ -17,7 +17,7 @@ This project is a **Sample Application** showcasing the use of **Docusign Naviga
 Before you begin, ensure you have the following installed:
 - **Node.js** (v14.x or later)
 - **npm** (v6.x or later)
-- A **DocuSign Developer Account** to generate OAuth credentials
+- A **Docusign Developer Account** to generate OAuth credentials
 
 ## Setup and Installation
 
@@ -34,7 +34,7 @@ Before you begin, ensure you have the following installed:
    npm install
    ```
 
-3. **Environment Variables**: Create a `.env` file in the root of your project and configure it with your DocuSign credentials:
+3. **Environment Variables**: Create a `.env` file in the root of your project and configure it with your Docusign credentials:
 
    ```
    DOCUSIGN_CLIENT_ID=your_client_id
@@ -89,7 +89,7 @@ The server will start and run on the specified port (default: 8080). You can cha
 ## Project Structure
 
 ```
-/navigator-api-sample-app
+/agreement-manager-api-sample-app
 │
 ├── /config           # Configuration files for the app
 │   └── config.js

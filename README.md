@@ -1,7 +1,7 @@
 
 # Docusign Insights Sample App
 
-The Insights Sample App showcases how the Navigator API (beta) can be used to get agreement details.
+The Insights Sample App showcases how the Agreement Manager API can be used to get agreement details.
 
 ## Table of Contents
 - [Prerequisites](#prerequisites)

@@ -1,4 +1,4 @@
-# Getting Started with Create Navigator
+# Getting Started with Create Agreement Manager
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
