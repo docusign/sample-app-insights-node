@@ -75,9 +75,6 @@ const Home: React.FC = () => {
                     <img src={arrowBlack} alt="" />
                   </a>
                 </div>
-                <p className="step-description">
-                  {t(translationKeys.HOME_HEADER_STEP_ONE)} or <a href='https://developers.docusign.com/docs/navigator-api/limited-availability/'  target='_blank' rel='noopener noreferrer'>request access</a> to the LA release.
-                </p>
               </div>
             </div>
             <div className="col-lg-7 col-md-12 main-images">
