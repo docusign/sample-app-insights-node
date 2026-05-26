@@ -26,7 +26,7 @@ const getAgreements = async (req) => {
 
     return agreements.data;
   } catch (error) {
-    console.error("Error fetching agreements from DocuSign:", error.message);
+    console.error("Error fetching agreements from Docusign:", error.message);
     throw error;
   }
 };
@@ -54,7 +54,7 @@ const getAgreementById = async (req, agreementId) => {
     return agreement;
   } catch (error) {
     console.error(
-      `Error fetching agreement ${agreementId} from DocuSign:`,
+      `Error fetching agreement ${agreementId} from Docusign:`,
       error.message
     );
     throw error;
