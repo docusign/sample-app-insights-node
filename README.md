@@ -13,8 +13,8 @@ The Insights Sample App showcases how the Agreement Manager API can be used to g
 
 Before you begin, ensure you have the following installed:
 
-- [Node.js](https://nodejs.org/) (v14.x or later)
-- [npm](https://www.npmjs.com/) (v6.x or later)
+- [Node.js](https://nodejs.org/) `^22.23.4`, `^24.22.1`, `^26.12.1` or higher
+- [npm](https://www.npmjs.com/) (bundled with Node.js)
 - A [Docusign developer account](https://www.docusign.com/developers/sandbox)
 
 ## Setup and Installation

@@ -1,15 +1,15 @@
-FROM --platform=linux/amd64 node:20 AS base
+FROM --platform=linux/amd64 node:22.23.4 AS base
 
 WORKDIR /usr/src/app
 
-COPY package*.json ./
+COPY package*.json .npmrc ./
 
 RUN npm install
 
 COPY . .
 
 # Run stage
-FROM --platform=linux/amd64 node:20.14-alpine
+FROM --platform=linux/amd64 node:22.23.4-alpine
 
 COPY --from=base /usr/src/app /usr/src/app
 WORKDIR /usr/src/app
